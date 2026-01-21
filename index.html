@@ -9,15 +9,15 @@
     
     <style>
         :root {
-            /* الألوان من اللوجو */
-            --brand-pink: #ff007f; /* درجة البينك الصريح */
-            --text-black: #000000; /* الأسود للكتابة */
-            --bg-white: #ffffff;   /* الأبيض للخلفية */
+            --brand-pink: #ff007f; 
+            --text-black: #000000;
+            --bg-gray: #e0e0e0; /* لون الرمادي الفاتح من خلفية اللوجو */
+            --white: #ffffff;
         }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-white);
+            background-color: var(--bg-gray); /* تطبيق الخلفية الرمادية */
             color: var(--text-black);
             margin: 0;
             padding: 0;
@@ -35,7 +35,6 @@
             margin-bottom: 50px;
         }
 
-        /* تنسيق اللوجو */
         .logo-container {
             width: 140px;
             height: 140px;
@@ -46,71 +45,62 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            /* لو الصورة فيها خلفية بيضاء مش محتاجين border-radius، بس لو مقصوصة نخليها دايرة */
-            /* border-radius: 50%; */ 
         }
 
-        /* تنسيق اسم البراند */
         h1 {
             color: var(--text-black);
             font-size: 2.2rem;
             font-weight: 900;
             margin: 0;
-            line-height: 1.2;
         }
 
         p.subtitle {
-            color: var(--brand-pink); /* الوصف باللون البينك */
+            color: var(--brand-pink);
             font-size: 1.1rem;
             margin-top: 5px;
             margin-bottom: 40px;
             font-weight: 700;
         }
 
-        /* تنسيق الأزرار (زي ما طلبت بالظبط) */
         .link-btn {
-            background-color: var(--bg-white); /* الزرار أبيض */
-            color: var(--text-black);          /* الكتابة سوداء */
-            border: 2px solid var(--brand-pink); /* الحافة (الإطار) بينك */
-            
+            background-color: var(--white); /* الأزرار لسه بيضاء عشان تظهر ع الرمادي */
+            color: var(--text-black);
+            border: 2px solid var(--brand-pink);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 16px 20px;
             margin-bottom: 16px;
-            border-radius: 50px; /* حواف دائرية ناعمة جداً */
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* ضل خفيف جداً */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* لما تقف بالماوس أو تلمس الزرار */
         .link-btn:hover {
-            background-color: var(--brand-pink); /* الخلفية تبقى بينك */
-            color: var(--bg-white);              /* الكتابة تقلب أبيض */
+            background-color: var(--brand-pink);
+            color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 0, 127, 0.2);
         }
 
         .link-btn i {
             position: absolute;
             right: 25px;
             font-size: 1.4rem;
-            color: var(--brand-pink); /* الأيقونة بينك */
+            color: var(--brand-pink);
         }
 
-        /* الأيقونة تقلب أبيض مع الهوفر */
         .link-btn:hover i {
-            color: var(--bg-white);
+            color: var(--white);
         }
 
         .footer {
             margin-top: 40px;
             font-size: 0.8rem;
-            color: #ccc;
+            color: #888;
         }
     </style>
 </head>
@@ -118,35 +108,35 @@
 
     <div class="container">
         <div class="logo-container">
-            <img src="rossia.png" alt="لمسة فاشون" class="logo">
+            <img src="logo.png" alt="لمسة فاشون" class="logo">
         </div>
         
         <h1>لمسة فاشون</h1>
         <p class="subtitle">للكاجوال الحريمي</p>
 
-        <a href="لينك_الدرايف_أو_التيليجرام" target="_blank" class="link-btn">
-            كوليكشن الموسم
-            <i class="fas fa-gem"></i>
-        </a>
-
-        <a href="https://wa.me/201022625429" target="_blank" class="link-btn">
-            حجز أوردر (واتساب)
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <a href="لينك_انستا" target="_blank" class="link-btn">
-            تابعنا انستجرام
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="لينك_فيسبوك" target="_blank" class="link-btn">
+        <a href="رابط_فيسبوك" target="_blank" class="link-btn">
             صفحة الفيسبوك
             <i class="fab fa-facebook-f"></i>
         </a>
 
-        <a href="لينك_تيك_توك" target="_blank" class="link-btn">
-            تيك توك
-            <i class="fab fa-tiktok"></i>
+        <a href="رابط_تليجرام" target="_blank" class="link-btn">
+            قناة التليجرام
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+
+        <a href="https://wa.me/201022625429" target="_blank" class="link-btn">
+            اطلبي أوردر (واتساب)
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="رابط_انستا" target="_blank" class="link-btn">
+            إنستجرام
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="رابط_لوكيشن" target="_blank" class="link-btn">
+            موقع المحل (Location)
+            <i class="fas fa-map-marker-alt"></i>
         </a>
 
         <div class="footer">Lamsa Fashion © 2024</div>
