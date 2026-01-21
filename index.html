@@ -9,16 +9,15 @@
     
     <style>
         :root {
-            --brand-pink: #E91E63; /* لون الشنطة من اللوجو */
+            --brand-pink: #E91E63; [span_0](start_span)/* درجة البينك من اللوجو[span_0](end_span) */
             --brand-black: #000000;
-            --bg-center: #ffffff; /* مركز الخلفية أبيض ناصع */
-            --bg-edge: #f0f0f0;   /* الأطراف رمادي فاتح */
+            --brand-gray: #E0E0E0; [span_1](start_span)/* درجة الرمادي من اللوجو[span_1](end_span) */
         }
 
         body {
             font-family: 'Cairo', sans-serif;
-            /* تدرج دائري بيخلي النص منور والأطراف أغمق سنة عشان اللوجو يسيح */
-            background: radial-gradient(circle, var(--bg-center) 0%, var(--bg-edge) 100%);
+            /* تدريج يسيّح اللون الرمادي بتاع اللوجو مع الأبيض */
+            background: radial-gradient(circle, #ffffff 0%, var(--brand-gray) 100%);
             margin: 0;
             padding: 0;
             display: flex;
@@ -31,51 +30,47 @@
             width: 85%;
             max-width: 380px;
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 50px;
+            margin-top: 50px;
         }
 
-        /* تنسيق اللوجو عشان يسيح تماماً */
-        .logo-wrapper {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 10px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        /* تنسيق اللوجو الدائري المدمج */
+        .logo-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%; /* دائري يعم زي ما طلبت */
+            overflow: hidden;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: #ffffff;
         }
 
         .logo {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            /* السر هنا: الخاصية دي بتمسح الخلفية الرمادية للصورة وتدمجها مع الموقع */
-            mix-blend-mode: multiply;
-            filter: contrast(1.1); /* بوضّح الألوان أكتر عشان تندمج صح */
+            object-fit: cover; /* عشان اللوجو يملى الدايرة ويختفي المربع */
         }
 
         h1 {
             color: var(--brand-black);
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 900;
             margin: 0;
-            letter-spacing: -1px;
         }
 
         .subtitle {
             color: var(--brand-pink);
             font-size: 1.1rem;
             font-weight: 700;
-            margin-top: 2px;
+            margin-top: 5px;
             margin-bottom: 35px;
         }
 
-        /* تنسيق الأزرار زي ما طلبت بالظبط */
+        /* الأزرار (أبيض، حواف بينك، كلام أسود) */
         .link-btn {
-            background-color: rgba(255, 255, 255, 0.9); /* أبيض شيك */
-            color: var(--brand-black); /* كتابة سوداء */
-            border: 2px solid var(--brand-pink); /* حواف بينك */
+            background-color: #ffffff;
+            color: var(--brand-black);
+            border: 2px solid var(--brand-pink);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -85,17 +80,15 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        /* تأثير لما تدوس أو تقف على الزرار */
         .link-btn:hover {
             background-color: var(--brand-pink);
             color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.25);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
         }
 
         .link-btn i {
@@ -103,7 +96,6 @@
             right: 25px;
             font-size: 1.4rem;
             color: var(--brand-pink);
-            transition: color 0.3s;
         }
 
         .link-btn:hover i {
@@ -111,9 +103,9 @@
         }
 
         .footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #999;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #666;
             font-weight: 600;
         }
     </style>
@@ -121,7 +113,7 @@
 <body>
 
     <div class="container">
-        <div class="logo-wrapper">
+        <div class="logo-container">
             <img src="rossia.png" alt="لمسة فاشون" class="logo">
         </div>
         
@@ -129,36 +121,31 @@
         <p class="subtitle">للكاجوال الحريمي</p>
 
         <a href="رابط_فيسبوك" target="_blank" class="link-btn">
-            صفحة الفيسبوك
+            فيسبوك
             <i class="fab fa-facebook-f"></i>
         </a>
 
         <a href="رابط_تليجرام" target="_blank" class="link-btn">
-            قناة التليجرام
+            تليجرام
             <i class="fab fa-telegram-plane"></i>
         </a>
 
         <a href="https://wa.me/201000000000" target="_blank" class="link-btn">
-            اطلبي أوردر (واتساب)
+            واتساب
             <i class="fab fa-whatsapp"></i>
         </a>
 
-        <a href="رابط_إنستجرام" target="_blank" class="link-btn">
+        <a href="رابط_انستا" target="_blank" class="link-btn">
             إنستجرام
             <i class="fab fa-instagram"></i>
         </a>
 
-        <a href="رابط_تيك_توك" target="_blank" class="link-btn">
-            تيك توك
-            <i class="fab fa-tiktok"></i>
-        </a>
-
-        <a href="رابط_الموقع" target="_blank" class="link-btn">
+        <a href="رابط_لوكيشن" target="_blank" class="link-btn">
             موقع المحل (Location)
             <i class="fas fa-map-marker-alt"></i>
         </a>
 
-        <div class="footer">Lamsa Fashion © 2024</div>
+        <div class="footer">لمسة فاشون © 2024</div>
     </div>
 
 </body>
